@@ -175,7 +175,7 @@ function withdrawBalance() public {
   }
 </pre>
 
-    <p>In the provided example, the <code>highestBidder</code> could be another contract and transferring funds to the contract triggers the contract’s fallback function. If the contract’s fallback always reverts, the <code>Auction</code> contract’s bid function becomes unusable - it will always revert. The bid function requires the transfer operation to succeed to fully execute.</p>
+    <p>In the provided example, the <code>currentLeader</code> could be another contract and transferring funds to the contract triggers the contract’s fallback function. If the contract’s fallback always reverts, the <code>Auction</code> contract’s bid function becomes unusable - it will always revert. The bid function requires the transfer operation to succeed to fully execute.</p>
     <p>The contract at the provided address throws an exception, execution halts and the exception is passed into the calling contract and prevents further execution.</p>
     <p>This problem is avoidable using the withdrawal pattern and push-pull. You could also use a multisig contract, expire time or another technique as an emergency plan for possible lock situations.</p>
 
